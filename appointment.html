@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointment - MonCAST</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(135deg,#001f4d,#0057d9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    width:100%;
+    max-width:500px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h2{
+    color:#003b8e;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+button{
+    margin-top:20px;
+    width:100%;
+    padding:12px;
+    background:#003b8e;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0057d9;
+}
+
+.success{
+    display:none;
+    margin-top:15px;
+    padding:10px;
+    background:#d4edda;
+    color:#155724;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Choose Appointment Date</h2>
+<p>Select your schedule for MonCAST enrollment processing</p>
+
+<input type="date" id="date">
+
+<button onclick="submitAppointment()">Confirm Appointment</button>
+
+<div class="success" id="msg">
+Appointment successfully booked!
+</div>
+
+</div>
+
+<script>
+function submitAppointment(){
+    let date = document.getElementById("date").value;
+
+    if(date === ""){
+        alert("Please select a date!");
+        return;
+    }
+
+    document.getElementById("msg").style.display = "block";
+}
+</script>
+
+</body>
+</html>
